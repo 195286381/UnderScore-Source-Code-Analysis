@@ -1,0 +1,22 @@
+{
+  "name": "it-is-not-a-lib",
+  "version": "1.0.0",
+  "description": "*UnderScore 源码分析*",
+  "main": "a.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/195286381/Underscore-Source-Code-Analysis.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/195286381/Underscore-Source-Code-Analysis/issues"
+  },
+  "homepage": "https://github.com/195286381/Underscore-Source-Code-Analysis#readme",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
