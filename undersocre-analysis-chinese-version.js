@@ -1,37 +1,33 @@
-//     Underscore.js 1.8.3
-//     http://underscorejs.org
-//     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
-//     Underscore may be freely distributed under the MIT license.
-
+// 老套路, 使用了 self-invoking anonymous function (自调用匿名函数)
 (function() {
 
-  // Baseline setup
-  // --------------
+  // 基本设置
+  // ------
 
-  // Establish the root object, `window` in the browser, or `exports` on the server.
+  // 这里相 github 源码有出入. 相当于把全局对象赋值给root.
   var root = this;
 
-  // Save the previous value of the `_` variable.
+  // 保存之前的下划线对象, 方便后期使用 noConfict 方法, 还原被替换掉的下划线引用的变量.
   var previousUnderscore = root._;
 
-  // Save bytes in the minified (but not gzipped) version:
+  // 声明这些原型代码, 方便后期压缩得更小.
   var ArrayProto = Array.prototype, ObjProto = Object.prototype, FuncProto = Function.prototype;
 
-  // Create quick reference variables for speed access to core prototypes.
+  // 创建快速引用, 缩短原型链.
   var
     push             = ArrayProto.push,
     slice            = ArrayProto.slice,
     toString         = ObjProto.toString,
     hasOwnProperty   = ObjProto.hasOwnProperty;
 
-  // All **ECMAScript 5** native function implementations that we hope to use
-  // are declared here.
+  // 我们希望使用的 ES5 的原生实现的方法,在如下声明:
   var
     nativeIsArray      = Array.isArray,
     nativeKeys         = Object.keys,
     nativeBind         = FuncProto.bind,
     nativeCreate       = Object.create;
-
+  
+  // TODO: 2017/06/23
   // Naked function reference for surrogate-prototype-swapping.
   var Ctor = function(){};
 
@@ -54,7 +50,7 @@
     root._ = _;
   }
 
-  // Current version.
+  // 挂载当前的版本到属性上面
   _.VERSION = '1.8.3';
 
   // Internal function that returns an efficient (for current engines) version
