@@ -34,6 +34,8 @@
   // Create a safe reference to the Underscore object for use below.
   var _ = function(obj) {
     if (obj instanceof _) return obj;
+    // 作用域安全的构造函数.(可参考JavaScript 高级程序设计里面的 作用域安全的构造函数)
+    // 确保每一次调用的都是构造函数调用.
     if (!(this instanceof _)) return new _(obj);
     this._wrapped = obj;
   };
